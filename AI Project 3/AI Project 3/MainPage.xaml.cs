@@ -41,32 +41,57 @@ namespace AI_Project_3
             this.Year2WinterRemove.Content = r;
             this.Year2SpringRemove.Content = r;
             this.Year2SummerRemove.Content = r;
+
+            this.Year3FallRemove.Content = r;
+            this.Year3WinterRemove.Content = r;
+            this.Year3SpringRemove.Content = r;
+            this.Year3SummerRemove.Content = r;
+
+            this.Year4FallRemove.Content = r;
+            this.Year4WinterRemove.Content = r;
+            this.Year4SpringRemove.Content = r;
+            this.Year4SummerRemove.Content = r; 
             #endregion
 
             #region setting remove button min & max width
-            int h = 25;
-            int w = 75;
+            int h = 13;
+            int w = 50;
 
             this.Year1FallRemove.MinHeight = h;
             this.Year1WinterRemove.MinHeight = h;
             this.Year1SpringRemove.MinHeight = h;
             this.Year1SummerRemove.MinHeight = h;
-            this.Year1FallRemove.MinWidth = w;
-            this.Year1WinterRemove.MinWidth = w;
-            this.Year1SpringRemove.MinWidth = w;
-            this.Year1WinterRemove.MinWidth = w;
+            this.Year1FallRemove.MaxWidth = w;
+            this.Year1SummerRemove.MaxWidth = w;
+            this.Year1SpringRemove.MaxWidth = w;
+            this.Year1WinterRemove.MaxWidth = w;
 
             this.Year2FallRemove.MinHeight = h;
             this.Year2WinterRemove.MinHeight = h;
             this.Year2SpringRemove.MinHeight = h;
             this.Year2SummerRemove.MinHeight = h;
-            this.Year2FallRemove.MinWidth = w;
-            this.Year2SummerRemove.MinWidth = w;
-            this.Year2WinterRemove.MinWidth = w;
-            this.Year2SummerRemove.MinWidth = w;
+            this.Year2FallRemove.MaxWidth = w;
+            this.Year2SpringRemove.MaxWidth = w;
+            this.Year2WinterRemove.MaxWidth = w;
+            this.Year2SummerRemove.MaxWidth = w;
 
-            
+            this.Year3FallRemove.MinHeight = h;
+            this.Year3WinterRemove.MinHeight = h;
+            this.Year3SpringRemove.MinHeight = h;
+            this.Year3SummerRemove.MinHeight = h;
+            this.Year3FallRemove.MaxWidth = w;
+            this.Year3SummerRemove.MaxWidth = w;
+            this.Year3SpringRemove.MaxWidth = w;
+            this.Year3WinterRemove.MaxWidth = w;
 
+            this.Year4FallRemove.MinHeight = h; 
+            this.Year4WinterRemove.MinHeight = h;
+            this.Year4SpringRemove.MinHeight = h;
+            this.Year4SummerRemove.MinHeight = h;
+            this.Year4FallRemove.MaxWidth = w;
+            this.Year4SpringRemove.MaxWidth = w; 
+            this.Year4WinterRemove.MaxWidth = w;
+            this.Year4SummerRemove.MaxWidth = w;
 
             #endregion
 
@@ -126,6 +151,34 @@ namespace AI_Project_3
 
             this.ImportTextBox.Text = "";
         }
+
+        //private void Year1FallRemove_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int selectedItem = this.Year1Fall.SelectedIndex;
+
+            
+
+        //    //majorinit.getYear1.getFall.getClasses.RemoveAt(selectedItem);
+
+        //    //this.Year1Fall.Items.Remove(Year1Fall.SelectedItem);
+
+        //    this.Year1FallRemove.Content = selectedItem;
+
+        //    this.Year1FallRemove.Content = "hello";
+            
+        //}
+
+        private void Year1FallRemove_Click_1(object sender, RoutedEventArgs e)
+        {
+            int selectedItem = this.Year1Fall.SelectedIndex;
+
+            majorinit.getYear1.getFall.removeClass(selectedItem);
+
+            //this.Year1FallRemove.Content = majorinit.getYear1.getFall.getClasses.Count;
+
+            
+
+        }        
 
     }
 }

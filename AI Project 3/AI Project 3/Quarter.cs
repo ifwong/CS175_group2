@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 
 namespace AI_Project_3
 {
-    public enum QuarterType { Fall, Winter, Spring, Summer };
+    public enum QuarterType { Fall, Winter, Spring, Summer }; //I wrote this enum with three different kinds of summer
 
     public class Quarter : INotifyPropertyChanged
     {
@@ -52,6 +52,22 @@ namespace AI_Project_3
                     classes.Remove(s);
                 }
             }
+        }
+
+        public void removeClass(String displayString)
+        {
+            foreach (Class s in classes)
+            {
+                if (s.displayString == displayString)
+                {
+                    classes.Remove(s);
+                }
+            }
+        }
+
+        public void removeClass(int index)
+        {
+            classes.RemoveAt(index);
         }
         public int size()
         {

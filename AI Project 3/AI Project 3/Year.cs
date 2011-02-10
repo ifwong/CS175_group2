@@ -50,6 +50,55 @@ namespace AI_Project_3
             return quarters[i];
         }
 
+        #region gets for all 4 quarters
+
+        /// <summary>
+        /// Returns fall quarter
+        /// </summary>
+        public Quarter getFall
+        {
+            get
+            {
+                return quarters[0];
+            }
+        }
+
+        /// <summary>
+        /// Gets winter quarter
+        /// </summary>
+        public Quarter getWinter
+        {
+            get
+            {
+                return quarters[1];
+            }
+        }
+
+        /// <summary>
+        /// Gets spring quarter
+        /// </summary>
+        public Quarter getSpring
+        {
+            get
+            {
+                return quarters[2];
+            }
+        }
+
+        /// <summary>
+        /// Gets Summer Quarter
+        /// </summary>
+        public Quarter getSummer
+        {
+            get
+            {
+                return quarters[3];
+            }
+        }
+
+        #endregion
+
+
         // return null if no quarter of this type exists
         public Quarter getQuarter(QuarterType qT)
         {
