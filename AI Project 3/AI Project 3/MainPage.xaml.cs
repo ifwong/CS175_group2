@@ -41,6 +41,16 @@ namespace AI_Project_3
             this.Year2WinterRemove.Content = r;
             this.Year2SpringRemove.Content = r;
             this.Year2SummerRemove.Content = r;
+
+            this.Year3FallRemove.Content = r;
+            this.Year3WinterRemove.Content = r;
+            this.Year3SpringRemove.Content = r;
+            this.Year3SummerRemove.Content = r;
+
+            this.Year4FallRemove.Content = r;
+            this.Year4WinterRemove.Content = r;
+            this.Year4SpringRemove.Content = r;
+            this.Year4SummerRemove.Content = r;
             #endregion
 
             #region setting remove button min & max width
@@ -65,6 +75,23 @@ namespace AI_Project_3
             this.Year2WinterRemove.MinWidth = w;
             this.Year2SummerRemove.MinWidth = w;
 
+            this.Year3FallRemove.MinHeight = h;
+            this.Year3WinterRemove.MinHeight = h;
+            this.Year3SpringRemove.MinHeight = h;
+            this.Year3SummerRemove.MinHeight = h;
+            this.Year3FallRemove.MinWidth = w;
+            this.Year3WinterRemove.MinWidth = w;
+            this.Year3SpringRemove.MinWidth = w;
+            this.Year3WinterRemove.MinWidth = w;
+
+            this.Year4FallRemove.MinHeight = h;
+            this.Year4WinterRemove.MinHeight = h;
+            this.Year4SpringRemove.MinHeight = h;
+            this.Year4SummerRemove.MinHeight = h;
+            this.Year4FallRemove.MinWidth = w;
+            this.Year4SummerRemove.MinWidth = w;
+            this.Year4WinterRemove.MinWidth = w;
+            this.Year4SummerRemove.MinWidth = w;
             
 
 
