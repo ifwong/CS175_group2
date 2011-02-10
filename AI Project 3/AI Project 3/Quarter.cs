@@ -16,7 +16,7 @@ using System.Collections.ObjectModel;
 
 namespace AI_Project_3
 {
-    public enum QuarterType { Fall, Winter, Spring, Summer };
+    public enum QuarterType { Fall, Winter, Spring, Summer }; //I wrote this enum with three different kinds of summer
 
     public class Quarter : INotifyPropertyChanged
     {
