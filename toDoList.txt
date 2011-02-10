@@ -1,0 +1,10 @@
+List:
+
+1) Save and load
+
+2) List of classes added
+
+3) Controls for how a class will be added
+
+4) Bind list of classes to the UI
+
