@@ -13,3 +13,8 @@ C:\Users\earlydemise\Desktop\AI Project 3\AI Project 3.Web\bin\AI Project 3.Web.
 C:\Users\earlydemise\Desktop\AI Project 3\AI Project 3.Web\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\earlydemise\Desktop\AI Project 3\AI Project 3.Web\obj\Debug\AI Project 3.Web.dll
 C:\Users\earlydemise\Desktop\AI Project 3\AI Project 3.Web\obj\Debug\AI Project 3.Web.pdb
+C:\Users\earlydemise\github\AI Project 3\AI Project 3.Web\bin\AI Project 3.Web.dll
+C:\Users\earlydemise\github\AI Project 3\AI Project 3.Web\bin\AI Project 3.Web.pdb
+C:\Users\earlydemise\github\AI Project 3\AI Project 3.Web\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\earlydemise\github\AI Project 3\AI Project 3.Web\obj\Debug\AI Project 3.Web.dll
+C:\Users\earlydemise\github\AI Project 3\AI Project 3.Web\obj\Debug\AI Project 3.Web.pdb

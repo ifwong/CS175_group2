@@ -62,10 +62,7 @@
                                                     <TextBlock Text="Fall" FontSize="10" />
                                                     <ListBox x:Name="Year1Fall" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear1Fall}" DisplayMemberPath="displayString"/>
                                                     <TextBlock x:Name="year1fallTextBlock" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1FallAdd" />
-                                                        <Button x:Name="Year1FallRemove" MinHeight="25" MinWidth="75"/>
-                                                    </StackPanel>
+                                                    <Button x:Name="Year1FallRemove" MinHeight="25" MinWidth="75"/>
                                                 </StackPanel>
                                             </Grid>
                                             <!-- Year 1 Winter-->
@@ -73,10 +70,7 @@
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Winter" FontSize="10" />
                                                     <ListBox x:Name="Year1Winter" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1WinterAdd" />
-                                                        <Button x:Name="Year1WinterRemove" />
-                                                    </StackPanel>
+                                                    <Button x:Name="Year1WinterRemove" />
                                                 </StackPanel>
                                             </Grid>
 
@@ -85,10 +79,7 @@
                                                 <StackPanel Margin="10,0,0,0">
                                                     <TextBlock Text="Spring" FontSize="10" />
                                                     <ListBox x:Name="Year1Spring" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1SpringAdd" />
-                                                        <Button x:Name="Year1SpringRemove" />
-                                                    </StackPanel>
+                                                    <Button x:Name="Year1SpringRemove" />
                                                 </StackPanel>
                                             </Grid>
 
@@ -97,12 +88,8 @@
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Summer" FontSize="10" />
                                                     <ListBox x:Name="Year1Summer">
-                                                        
                                                     </ListBox>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1SummerAdd" />
-                                                        <Button x:Name="Year1SummerRemove" />
-                                                    </StackPanel>
+                                                    <Button x:Name="Year1SummerRemove" />
                                                 </StackPanel>
                                             </Grid>
                                         </Grid>
@@ -132,12 +119,8 @@
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
                                                         <ListBox x:Name="Year2Fall">
-                                                            
                                                         </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2FallAdd" />
-                                                            <Button x:Name="Year2FallRemove" />
-                                                        </StackPanel>
+                                                        <Button x:Name="Year2FallRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 2 Winter-->
@@ -145,12 +128,8 @@
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
                                                         <ListBox x:Name="Year2Winter">
-                                                            
                                                         </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2WinterAdd" />
-                                                            <Button x:Name="Year2WinterRemove" />
-                                                        </StackPanel>
+                                                        <Button x:Name="Year2WinterRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -159,12 +138,8 @@
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
                                                         <ListBox x:Name="Year2Spring">
-                                                            
                                                         </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2SpringAdd" />
-                                                            <Button x:Name="Year2SpringRemove" />
-                                                        </StackPanel>
+                                                        <Button x:Name="Year2SpringRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -173,10 +148,7 @@
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
                                                         <ListBox x:Name="Year2Summer" />
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2SummerAdd" />
-                                                            <Button x:Name="Year2SummerRemove" />
-                                                        </StackPanel>
+                                                        <Button x:Name="Year2SummerRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
@@ -207,6 +179,8 @@
                                                 <Grid Grid.Column="0" Grid.Row="0">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
+                                                        <ListBox x:Name="Year3Fall"/>
+                                                        <Button x:Name="Year3FallRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 3 Winter-->
