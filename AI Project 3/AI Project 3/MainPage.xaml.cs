@@ -50,7 +50,7 @@ namespace AI_Project_3
             this.Year4FallRemove.Content = r;
             this.Year4WinterRemove.Content = r;
             this.Year4SpringRemove.Content = r;
-            this.Year4SummerRemove.Content = r;
+            this.Year4SummerRemove.Content = r; 
             #endregion
 
             #region setting remove button min & max width
@@ -84,12 +84,12 @@ namespace AI_Project_3
             this.Year3SpringRemove.MinWidth = w;
             this.Year3WinterRemove.MinWidth = w;
 
-            this.Year4FallRemove.MinHeight = h;
+            this.Year4FallRemove.MinHeight = h; 
             this.Year4WinterRemove.MinHeight = h;
             this.Year4SpringRemove.MinHeight = h;
             this.Year4SummerRemove.MinHeight = h;
             this.Year4FallRemove.MinWidth = w;
-            this.Year4SummerRemove.MinWidth = w;
+            this.Year4SummerRemove.MinWidth = w; 
             this.Year4WinterRemove.MinWidth = w;
             this.Year4SummerRemove.MinWidth = w;
             
@@ -153,6 +153,13 @@ namespace AI_Project_3
 
             this.ImportTextBox.Text = "";
         }
+
+        private void Year1FallRemove_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedItem = this.Year1Fall.SelectedIndex;
+
+            majorinit.scheduleOfClasses[0].getQuarter(0).getClasses.RemoveAt(selectedItem);
+        }        
 
     }
 }

@@ -89,7 +89,13 @@ namespace AI_Project_3
             #region year1
 
             Year year1 = new Year(1);
+            Year year2 = new Year(2);
+            Year year3 = new Year(3);
+            Year year4 = new Year(4);
             scheduleOfClasses.Add(year1);
+            scheduleOfClasses.Add(year2);
+            scheduleOfClasses.Add(year3);
+            scheduleOfClasses.Add(year4);
             #region quarter1
 
             Quarter quarter1 = year1.getQuarter(0);
@@ -113,19 +119,131 @@ namespace AI_Project_3
 
 
         #region GetSchedulerStuffs
-
         public ObservableCollection<Class> getYear1Fall
         {
             get
             {
                 return scheduleOfClasses[0].getQuarter(0).getClasses;
             }
+        }
 
-            set
+        public ObservableCollection<Class> getYear2Fall
+        {
+            get
             {
+                return scheduleOfClasses[1].getQuarter(0).getClasses;
             }
         }
 
+        public ObservableCollection<Class> getYear3Fall
+        {
+            get
+            {
+                return scheduleOfClasses[2].getQuarter(0).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear4Fall
+        {
+            get
+            {
+                return scheduleOfClasses[3].getQuarter(0).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear1Winter
+        {
+            get
+            {
+                return scheduleOfClasses[0].getQuarter(1).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear2Winter
+        {
+            get
+            {
+                return scheduleOfClasses[1].getQuarter(1).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear3Winter
+        {
+            get
+            {
+                return scheduleOfClasses[2].getQuarter(1).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear4Winter
+        {
+            get
+            {
+                return scheduleOfClasses[3].getQuarter(1).getClasses;
+            }
+        }
+        public ObservableCollection<Class> getYear1Spring
+        {
+            get
+            {
+                return scheduleOfClasses[0].getQuarter(2).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear2Spring
+        {
+            get
+            {
+                return scheduleOfClasses[1].getQuarter(2).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear3Spring
+        {
+            get
+            {
+                return scheduleOfClasses[2].getQuarter(2).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear4Spring
+        {
+            get
+            {
+                return scheduleOfClasses[3].getQuarter(2).getClasses;
+            }
+        }
+        public ObservableCollection<Class> getYear1Summer
+        {
+            get
+            {
+                return scheduleOfClasses[0].getQuarter(3).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear2Summer
+        {
+            get
+            {
+                return scheduleOfClasses[1].getQuarter(3).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear3Summer
+        {
+            get
+            {
+                return scheduleOfClasses[2].getQuarter(3).getClasses;
+            }
+        }
+
+        public ObservableCollection<Class> getYear4Summer
+        {
+            get
+            {
+                return scheduleOfClasses[3].getQuarter(3).getClasses;
+            }
+        }
         #endregion
 
     }

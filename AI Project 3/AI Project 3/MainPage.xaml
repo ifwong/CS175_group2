@@ -61,22 +61,15 @@
                                                 <StackPanel Margin="10,0,0,0">
                                                     <TextBlock Text="Fall" FontSize="10" />
                                                     <ListBox x:Name="Year1Fall" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear1Fall}" DisplayMemberPath="displayString"/>
-                                                    <TextBlock x:Name="year1fallTextBlock" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1FallAdd" />
-                                                        <Button x:Name="Year1FallRemove" MinHeight="25" MinWidth="75"/>
-                                                    </StackPanel>
+                                                    <Button x:Name="Year1FallRemove" Click="Year1FallRemove_Click" />
                                                 </StackPanel>
                                             </Grid>
                                             <!-- Year 1 Winter-->
                                             <Grid Grid.Column="1" Grid.Row="0">
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Winter" FontSize="10" />
-                                                    <ListBox x:Name="Year1Winter" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1WinterAdd" />
-                                                        <Button x:Name="Year1WinterRemove" />
-                                                    </StackPanel>
+                                                    <ListBox x:Name="Year1Winter" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear1Winter}" />
+                                                    <Button x:Name="Year1WinterRemove" />
                                                 </StackPanel>
                                             </Grid>
 
@@ -84,11 +77,8 @@
                                             <Grid Grid.Column="0" Grid.Row="1">
                                                 <StackPanel Margin="10,0,0,0">
                                                     <TextBlock Text="Spring" FontSize="10" />
-                                                    <ListBox x:Name="Year1Spring" />
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1SpringAdd" />
-                                                        <Button x:Name="Year1SpringRemove" />
-                                                    </StackPanel>
+                                                    <ListBox x:Name="Year1Spring" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear1Spring}" />
+                                                    <Button x:Name="Year1SpringRemove" />
                                                 </StackPanel>
                                             </Grid>
 
@@ -96,13 +86,8 @@
                                             <Grid Grid.Column="1" Grid.Row="1">
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Summer" FontSize="10" />
-                                                    <ListBox x:Name="Year1Summer">
-                                                        
-                                                    </ListBox>
-                                                    <StackPanel Orientation="Horizontal">
-                                                        <Button x:Name="Year1SummerAdd" />
-                                                        <Button x:Name="Year1SummerRemove" />
-                                                    </StackPanel>
+                                                    <ListBox x:Name="Year1Summer" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear1Summer}" />
+                                                    <Button x:Name="Year1SummerRemove" />
                                                 </StackPanel>
                                             </Grid>
                                         </Grid>
@@ -131,26 +116,16 @@
                                                 <Grid Grid.Column="0" Grid.Row="0">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
-                                                        <ListBox x:Name="Year2Fall">
-                                                            
-                                                        </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2FallAdd" />
-                                                            <Button x:Name="Year2FallRemove" />
-                                                        </StackPanel>
+                                                        <ListBox x:Name="Year2Fall" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear2Fall}" />
+                                                        <Button x:Name="Year2FallRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 2 Winter-->
                                                 <Grid Grid.Column="1" Grid.Row="0">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
-                                                        <ListBox x:Name="Year2Winter">
-                                                            
-                                                        </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2WinterAdd" />
-                                                            <Button x:Name="Year2WinterRemove" />
-                                                        </StackPanel>
+                                                        <ListBox x:Name="Year2Winter" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear2Winter}" />
+                                                        <Button x:Name="Year2WinterRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -158,13 +133,8 @@
                                                 <Grid Grid.Column="0" Grid.Row="1">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
-                                                        <ListBox x:Name="Year2Spring">
-                                                            
-                                                        </ListBox>
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2SpringAdd" />
-                                                            <Button x:Name="Year2SpringRemove" />
-                                                        </StackPanel>
+                                                        <ListBox x:Name="Year2Spring" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear2Spring}" />
+                                                        <Button x:Name="Year2SpringRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -172,11 +142,8 @@
                                                 <Grid Grid.Column="1" Grid.Row="1">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
-                                                        <ListBox x:Name="Year2Summer" />
-                                                        <StackPanel Orientation="Horizontal">
-                                                            <Button x:Name="Year2SummerAdd" />
-                                                            <Button x:Name="Year2SummerRemove" />
-                                                        </StackPanel>
+                                                        <ListBox x:Name="Year2Summer" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear2Summer}" />
+                                                        <Button x:Name="Year2SummerRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
@@ -207,12 +174,16 @@
                                                 <Grid Grid.Column="0" Grid.Row="0">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
+                                                        <ListBox x:Name="Year3Fall" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear3Fall}" />
+                                                        <Button x:Name="Year3FallRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 3 Winter-->
                                                 <Grid Grid.Column="1" Grid.Row="0">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
+                                                        <ListBox x:Name="Year3Winter" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear3Winter}" />
+                                                        <Button x:Name="Year3WinterRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -220,6 +191,8 @@
                                                 <Grid Grid.Column="0" Grid.Row="1">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
+                                                        <ListBox x:Name="Year3Spring" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear3Spring}" />
+                                                        <Button x:Name="Year3SpringRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -227,6 +200,8 @@
                                                 <Grid Grid.Column="1" Grid.Row="1">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
+                                                        <ListBox x:Name="Year3Summer" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear3Summer}" />
+                                                        <Button x:Name="Year3SummerRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
@@ -257,12 +232,16 @@
                                                 <Grid Grid.Column="0" Grid.Row="0">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
+                                                        <ListBox x:Name="Year4Fall" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear4Fall}" />
+                                                        <Button x:Name="Year4FallRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 4 Winter-->
                                                 <Grid Grid.Column="1" Grid.Row="0">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
+                                                        <ListBox x:Name="Year4Winter" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear4Winter}" />
+                                                        <Button x:Name="Year4WinterRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -270,6 +249,8 @@
                                                 <Grid Grid.Column="0" Grid.Row="1">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
+                                                        <ListBox x:Name="Year4Spring" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear4Spring}" />
+                                                        <Button x:Name="Year4SpringRemove" />
                                                     </StackPanel>
                                                 </Grid>
 
@@ -277,6 +258,8 @@
                                                 <Grid Grid.Column="1" Grid.Row="1">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
+                                                        <ListBox x:Name="Year4Summer" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=getYear4Summer}" />
+                                                        <Button x:Name="Year4SummerRemove" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>

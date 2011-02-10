@@ -20,3 +20,25 @@ C:\Users\earlydemise\Desktop\AI Project 3\aiproject4\obj\Debug\aiproject4.g.reso
 C:\Users\earlydemise\Desktop\AI Project 3\aiproject4\obj\Debug\aiproject4.dll
 C:\Users\earlydemise\Desktop\AI Project 3\aiproject4\obj\Debug\aiproject4.pdb
 C:\Users\earlydemise\Desktop\AI Project 3\aiproject4\obj\Debug\XapCacheFile.xml
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\aiproject4.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\aiproject4.pdb
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\AppManifest.xaml
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\aiproject4.xap
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\aiproject4TestPage.html
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\System.Windows.Controls.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\System.Windows.Controls.xml
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\de\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\es\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\fr\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\it\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\ja\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\ko\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\zh-Hans\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\Bin\Debug\zh-Hant\System.Windows.Controls.resources.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\App.g.cs
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\MainPage.g.cs
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\aiproject4.g.resources
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\aiproject4.dll
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\aiproject4.pdb
+C:\Documents and Settings\Ignatius Wong\CS175_group2\AI Project 3\aiproject4\obj\Debug\XapCacheFile.xml
