@@ -75,7 +75,15 @@ namespace AI_Project_3
 
             // initialize the list of added majors
             listOfAddedMajors = new ObservableCollection<string>();
+            listOfClassesTaken = new ObservableCollection<Class>();
 
+            for (int i = 0; i < 15; i++)
+            {
+                string s = "a";
+                for (int j = 0; j < i; j++)
+                    s += "a";
+                listOfClassesTaken.Add(new Class("dat" + s, ClassStatus.Completed));
+            }
 
             //create the list of years
             scheduleOfClasses = new ObservableCollection<Year>();

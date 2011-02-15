@@ -95,8 +95,7 @@ namespace AI_Project_3
 
             #endregion
 
-
-
+            
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -174,10 +173,24 @@ namespace AI_Project_3
 
             majorinit.getYear1.getFall.removeClass(selectedItem);
 
-            //this.Year1FallRemove.Content = majorinit.getYear1.getFall.getClasses.Count;
+            // Work in here
+
+            // Manual update for now
+            //this.Year1Fall.ItemsSource = null;
+            //this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
 
             
+            var bindingExpression = this.Year1Fall.GetBindingExpression(ListBox.ItemsSourceProperty);
 
+            if (bindingExpression != null)
+            {
+                bindingExpression.UpdateSource();
+
+                //Console.WriteLine(majorinit.getYear1.getFall.getClasses.ToString());
+            }
+            
+            
+            
         }        
 
     }

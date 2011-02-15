@@ -69,11 +69,11 @@ namespace AI_Project_3
         {
             classes.RemoveAt(index);
         }
+
         public int size()
         {
             return classes.Count;
         }
-
 
         public Class getClass(int i)
         {
