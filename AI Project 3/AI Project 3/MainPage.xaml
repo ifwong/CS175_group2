@@ -281,7 +281,8 @@
                                     <controls:TabItem Header="Classes Taken">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="list of classes taken" />
-                                            <ListBox x:Name="TakenClasses" ItemsSource="{Binding Path=listOfClassesTaken}" DisplayMemberPath="displayString" DataContext="{Binding Source={StaticResource MajorInit}}" />
+                                            <ListBox x:Name="TakenClasses" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=listOfClassesTaken}" DisplayMemberPath="displayString"/>
+                                            <Button x:Name="AddtoYear1Fall" Click="AddtoYear1Fall_Click" />
                                         </StackPanel>
                                     </controls:TabItem>
 

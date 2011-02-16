@@ -30,6 +30,9 @@ namespace AI_Project_3
 
         void Page_Loaded(object sender, RoutedEventArgs e)
         {
+            this.AddtoYear1Fall.Content = "Add";
+            this.AddtoYear1Fall.MinHeight = 13;
+            this.AddtoYear1Fall.MaxWidth = 50;
             #region adding 'remove' to remove buttons
             String r = "Remove";
             this.Year1FallRemove.Content = r;
@@ -176,8 +179,8 @@ namespace AI_Project_3
             // Work in here
 
             // Manual update for now
-            //this.Year1Fall.ItemsSource = null;
-            //this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
+            this.Year1Fall.ItemsSource = null;
+            this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
 
             
             var bindingExpression = this.Year1Fall.GetBindingExpression(ListBox.ItemsSourceProperty);
@@ -191,6 +194,33 @@ namespace AI_Project_3
             
             
             
+        }
+
+        private void AddtoYear1Fall_Click(object sender, RoutedEventArgs e)
+        {
+            int selectedItem = this.TakenClasses.SelectedIndex;
+            if (selectedItem >= 0)
+            {
+                Class c = majorinit.listOfClassesTaken.ElementAt(selectedItem);
+
+                majorinit.getYear1.getFall.addClass(c);
+                // Work in here
+
+                // Manual update for now
+                this.Year1Fall.ItemsSource = null;
+                this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
+
+
+                var bindingExpression = this.Year1Fall.GetBindingExpression(ListBox.ItemsSourceProperty);
+
+                if (bindingExpression != null)
+                {
+                    bindingExpression.UpdateSource();
+
+                    //Console.WriteLine(majorinit.getYear1.getFall.getClasses.ToString());
+                }
+            }
+
         }        
 
     }

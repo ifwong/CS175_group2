@@ -68,14 +68,14 @@ namespace AI_Project_3
         }
 
         
-        public override bool Equals(object obj)
+/*        public override bool Equals(object obj)
         {
             if (name.Equals(((Class)obj).name))
             {
                 return true;
             }
             else return false;
-        }
+        } */
         
     }
 }
