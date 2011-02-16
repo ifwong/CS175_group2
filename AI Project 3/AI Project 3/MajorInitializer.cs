@@ -24,7 +24,9 @@ namespace AI_Project_3
 
         public string importString { get; set; }
 
-        public string _SelectedMajor;
+        public ObservableCollection<Class> listOfClassesTaken { get; set; }
+
+        private string _SelectedMajor;
 
         public string SelectedMajor
         {
@@ -73,7 +75,15 @@ namespace AI_Project_3
 
             // initialize the list of added majors
             listOfAddedMajors = new ObservableCollection<string>();
+            listOfClassesTaken = new ObservableCollection<Class>();
 
+            for (int i = 0; i < 15; i++)
+            {
+                string s = "a";
+                for (int j = 0; j < i; j++)
+                    s += "a";
+                listOfClassesTaken.Add(new Class("dat" + s, ClassStatus.Completed));
+            }
 
             //create the list of years
             scheduleOfClasses = new ObservableCollection<Year>();
@@ -118,133 +128,181 @@ namespace AI_Project_3
         }
 
 
-        #region GetSchedulerStuffs
-        public ObservableCollection<Class> getYear1Fall
-        {
-            get
-            {
-                return scheduleOfClasses[0].getQuarter(0).getClasses;
-            }
-        }
+       #region GetSchedulerStuffs
+       // public ObservableCollection<Class> getYear1Fall
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[0].getQuarter(0).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear2Fall
-        {
-            get
-            {
-                return scheduleOfClasses[1].getQuarter(0).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear2Fall
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[1].getQuarter(0).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear3Fall
-        {
-            get
-            {
-                return scheduleOfClasses[2].getQuarter(0).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear3Fall
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[2].getQuarter(0).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear4Fall
-        {
-            get
-            {
-                return scheduleOfClasses[3].getQuarter(0).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear4Fall
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[3].getQuarter(0).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear1Winter
-        {
-            get
-            {
-                return scheduleOfClasses[0].getQuarter(1).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear1Winter
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[0].getQuarter(1).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear2Winter
-        {
-            get
-            {
-                return scheduleOfClasses[1].getQuarter(1).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear2Winter
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[1].getQuarter(1).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear3Winter
-        {
-            get
-            {
-                return scheduleOfClasses[2].getQuarter(1).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear3Winter
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[2].getQuarter(1).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear4Winter
-        {
-            get
-            {
-                return scheduleOfClasses[3].getQuarter(1).getClasses;
-            }
-        }
-        public ObservableCollection<Class> getYear1Spring
-        {
-            get
-            {
-                return scheduleOfClasses[0].getQuarter(2).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear4Winter
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[3].getQuarter(1).getClasses;
+       //     }
+       // }
+       // public ObservableCollection<Class> getYear1Spring
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[0].getQuarter(2).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear2Spring
-        {
-            get
-            {
-                return scheduleOfClasses[1].getQuarter(2).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear2Spring
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[1].getQuarter(2).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear3Spring
-        {
-            get
-            {
-                return scheduleOfClasses[2].getQuarter(2).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear3Spring
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[2].getQuarter(2).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear4Spring
-        {
-            get
-            {
-                return scheduleOfClasses[3].getQuarter(2).getClasses;
-            }
-        }
-        public ObservableCollection<Class> getYear1Summer
-        {
-            get
-            {
-                return scheduleOfClasses[0].getQuarter(3).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear4Spring
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[3].getQuarter(2).getClasses;
+       //     }
+       // }
+       // public ObservableCollection<Class> getYear1Summer
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[0].getQuarter(3).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear2Summer
-        {
-            get
-            {
-                return scheduleOfClasses[1].getQuarter(3).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear2Summer
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[1].getQuarter(3).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear3Summer
-        {
-            get
-            {
-                return scheduleOfClasses[2].getQuarter(3).getClasses;
-            }
-        }
+       // public ObservableCollection<Class> getYear3Summer
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[2].getQuarter(3).getClasses;
+       //     }
+       // }
 
-        public ObservableCollection<Class> getYear4Summer
+       // public ObservableCollection<Class> getYear4Summer
+       // {
+       //     get
+       //     {
+       //         return scheduleOfClasses[3].getQuarter(3).getClasses;
+       //     }
+       // }
+       #endregion
+
+        #region classes taken
+        /// <summary>
+        /// Removes the class at specified index from the list of classes taken
+        /// </summary>
+        /// <param name="index">int index</param>
+        public void removeClassesTakenAt(int index)
         {
-            get
-            {
-                return scheduleOfClasses[3].getQuarter(3).getClasses;
-            }
+            listOfClassesTaken.RemoveAt(index);
         }
         #endregion
 
+#region Get scheduler stuff improved
+
+        /// <summary>
+        /// Gets the first year
+        /// </summary>
+        public Year getYear1
+        {
+            get
+            {
+                return scheduleOfClasses[0];
+            }
+        }
+
+        public Year getYear2
+        {
+            get
+            {
+                return scheduleOfClasses[1];
+            }
+        }
+
+        public Year getYear3
+        {
+            get
+            {
+                return scheduleOfClasses[2];
+            }
+        }
+
+        public Year getYear4
+        {
+            get
+            {
+                return scheduleOfClasses[3];
+            }
+        }
+#endregion
     }
 }

@@ -54,51 +54,48 @@ namespace AI_Project_3
             #endregion
 
             #region setting remove button min & max width
-            int h = 25;
-            int w = 75;
+            int h = 13;
+            int w = 50;
 
             this.Year1FallRemove.MinHeight = h;
             this.Year1WinterRemove.MinHeight = h;
             this.Year1SpringRemove.MinHeight = h;
             this.Year1SummerRemove.MinHeight = h;
-            this.Year1FallRemove.MinWidth = w;
-            this.Year1WinterRemove.MinWidth = w;
-            this.Year1SpringRemove.MinWidth = w;
-            this.Year1WinterRemove.MinWidth = w;
+            this.Year1FallRemove.MaxWidth = w;
+            this.Year1SummerRemove.MaxWidth = w;
+            this.Year1SpringRemove.MaxWidth = w;
+            this.Year1WinterRemove.MaxWidth = w;
 
             this.Year2FallRemove.MinHeight = h;
             this.Year2WinterRemove.MinHeight = h;
             this.Year2SpringRemove.MinHeight = h;
             this.Year2SummerRemove.MinHeight = h;
-            this.Year2FallRemove.MinWidth = w;
-            this.Year2SummerRemove.MinWidth = w;
-            this.Year2WinterRemove.MinWidth = w;
-            this.Year2SummerRemove.MinWidth = w;
+            this.Year2FallRemove.MaxWidth = w;
+            this.Year2SpringRemove.MaxWidth = w;
+            this.Year2WinterRemove.MaxWidth = w;
+            this.Year2SummerRemove.MaxWidth = w;
 
             this.Year3FallRemove.MinHeight = h;
             this.Year3WinterRemove.MinHeight = h;
             this.Year3SpringRemove.MinHeight = h;
             this.Year3SummerRemove.MinHeight = h;
-            this.Year3FallRemove.MinWidth = w;
-            this.Year3WinterRemove.MinWidth = w;
-            this.Year3SpringRemove.MinWidth = w;
-            this.Year3WinterRemove.MinWidth = w;
+            this.Year3FallRemove.MaxWidth = w;
+            this.Year3SummerRemove.MaxWidth = w;
+            this.Year3SpringRemove.MaxWidth = w;
+            this.Year3WinterRemove.MaxWidth = w;
 
             this.Year4FallRemove.MinHeight = h; 
             this.Year4WinterRemove.MinHeight = h;
             this.Year4SpringRemove.MinHeight = h;
             this.Year4SummerRemove.MinHeight = h;
-            this.Year4FallRemove.MinWidth = w;
-            this.Year4SummerRemove.MinWidth = w; 
-            this.Year4WinterRemove.MinWidth = w;
-            this.Year4SummerRemove.MinWidth = w;
-            
-
+            this.Year4FallRemove.MaxWidth = w;
+            this.Year4SpringRemove.MaxWidth = w; 
+            this.Year4WinterRemove.MaxWidth = w;
+            this.Year4SummerRemove.MaxWidth = w;
 
             #endregion
 
-
-
+            
         }
 
         private void addButton_Click(object sender, RoutedEventArgs e)
@@ -154,11 +151,46 @@ namespace AI_Project_3
             this.ImportTextBox.Text = "";
         }
 
-        private void Year1FallRemove_Click(object sender, RoutedEventArgs e)
+        //private void Year1FallRemove_Click(object sender, RoutedEventArgs e)
+        //{
+        //    int selectedItem = this.Year1Fall.SelectedIndex;
+
+            
+
+        //    //majorinit.getYear1.getFall.getClasses.RemoveAt(selectedItem);
+
+        //    //this.Year1Fall.Items.Remove(Year1Fall.SelectedItem);
+
+        //    this.Year1FallRemove.Content = selectedItem;
+
+        //    this.Year1FallRemove.Content = "hello";
+            
+        //}
+
+        private void Year1FallRemove_Click_1(object sender, RoutedEventArgs e)
         {
             int selectedItem = this.Year1Fall.SelectedIndex;
 
-            majorinit.scheduleOfClasses[0].getQuarter(0).getClasses.RemoveAt(selectedItem);
+            majorinit.getYear1.getFall.removeClass(selectedItem);
+
+            // Work in here
+
+            // Manual update for now
+            //this.Year1Fall.ItemsSource = null;
+            //this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
+
+            
+            var bindingExpression = this.Year1Fall.GetBindingExpression(ListBox.ItemsSourceProperty);
+
+            if (bindingExpression != null)
+            {
+                bindingExpression.UpdateSource();
+
+                //Console.WriteLine(majorinit.getYear1.getFall.getClasses.ToString());
+            }
+            
+            
+            
         }        
 
     }

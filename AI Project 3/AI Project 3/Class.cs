@@ -29,9 +29,11 @@ namespace AI_Project_3
         public Class(string name, ClassStatus status)
         {
             this.name = name;
-            this.status = status;
+            this.status = status;                
         }
 
+
+        
         public String Name
         {
             get
@@ -65,6 +67,7 @@ namespace AI_Project_3
             }
         }
 
+        
         public override bool Equals(object obj)
         {
             if (name.Equals(((Class)obj).name))
@@ -73,6 +76,6 @@ namespace AI_Project_3
             }
             else return false;
         }
-
+        
     }
 }

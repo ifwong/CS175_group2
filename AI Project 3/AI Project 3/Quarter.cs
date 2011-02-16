@@ -53,11 +53,27 @@ namespace AI_Project_3
                 }
             }
         }
+
+        public void removeClass(String displayString)
+        {
+            foreach (Class s in classes)
+            {
+                if (s.displayString == displayString)
+                {
+                    classes.Remove(s);
+                }
+            }
+        }
+
+        public void removeClass(int index)
+        {
+            classes.RemoveAt(index);
+        }
+
         public int size()
         {
             return classes.Count;
         }
-
 
         public Class getClass(int i)
         {
