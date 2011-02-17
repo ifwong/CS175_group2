@@ -179,7 +179,6 @@ namespace AI_Project_3
             // Work in here
 
             // Manual update for now
-            this.Year1Fall.ItemsSource = null;
             this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
 
             
@@ -204,11 +203,12 @@ namespace AI_Project_3
                 Class c = majorinit.listOfClassesTaken.ElementAt(selectedItem);
 
                 majorinit.getYear1.getFall.addClass(c);
+                majorinit.listOfClassesTaken.Remove(c);
                 // Work in here
 
                 // Manual update for now
-                this.Year1Fall.ItemsSource = null;
                 this.Year1Fall.ItemsSource = majorinit.getYear1.getFall.getClasses;
+                this.TakenClasses.ItemsSource = majorinit.listOfClassesTaken;
 
 
                 var bindingExpression = this.Year1Fall.GetBindingExpression(ListBox.ItemsSourceProperty);
