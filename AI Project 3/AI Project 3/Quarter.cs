@@ -38,11 +38,19 @@ namespace AI_Project_3
             quarterType = qT;
         }
 
+        /// <summary>
+        /// Adds a class to the list of classes
+        /// </summary>
+        /// <param name="c">Class</param>
         public void addClass(Class c)
         {
             classes.Add(c);
         }
 
+        /// <summary>
+        /// Removes a class from the list of classes matching the specified class
+        /// </summary>
+        /// <param name="c">Class</param>
         public void removeCLass(Class c)
         {
             foreach (Class s in classes)
@@ -50,10 +58,15 @@ namespace AI_Project_3
                 if (s.Equals(c))
                 {
                     classes.Remove(s);
+                    OnPropertyChanged("classes");
                 }
             }
         }
 
+        /// <summary>
+        /// Removes a class by name
+        /// </summary>
+        /// <param name="displayString">Class display string</param>
         public void removeClass(String displayString)
         {
             foreach (Class s in classes)
@@ -61,18 +74,27 @@ namespace AI_Project_3
                 if (s.displayString == displayString)
                 {
                     classes.Remove(s);
+                    OnPropertyChanged("classes");
                 }
             }
         }
 
+        /// <summary>
+        /// Removes a class from the list of classes by index
+        /// </summary>
+        /// <param name="index">int</param>
         public void removeClass(int index)
         {
             classes.RemoveAt(index);
+            OnPropertyChanged("classes");
+            
         }
+
+        public int Size;
 
         public int size()
         {
-            return classes.Count;
+                return classes.Count;
         }
 
         public Class getClass(int i)
@@ -110,13 +132,14 @@ namespace AI_Project_3
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private void NotifyPropertyChanged(String info)
+        private void OnPropertyChanged(string property)
         {
             if (PropertyChanged != null)
             {
-              // trigger a recalc?
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
             }
         }
+
 
     }
 }

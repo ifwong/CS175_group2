@@ -9,6 +9,7 @@
 
     <UserControl.Resources>
         <ns:MajorInitializer x:Key="MajorInit" />
+        <ns:ListBoxCountVisibilityConverter x:Key="ListBoxCountVisibilityConverter" />
     </UserControl.Resources>
 
     <Grid>
@@ -38,7 +39,7 @@
 
                                     <!-- YEAR 1 GRID-->
                                     <Border BorderThickness="2,2,4,4" BorderBrush="Black"/>
-                                    <Grid Grid.Column="0" Grid.Row="0" x:Name="year1">
+                                    <Grid Grid.Column="0" Grid.Row="0" x:Name="year1" Background="Aqua">
                                         <Grid.RowDefinitions>
                                             <RowDefinition Height="20*" />
                                             <RowDefinition Height="129*" />
@@ -47,7 +48,7 @@
                                         <!-- TEXTBAR FOR YEAR 1-->
                                         <Border BorderThickness="0,0,0,2" BorderBrush="Black"/>
                                         <TextBlock Grid.Row="0" Text="Year 1" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        <Grid Grid.Row="1" x:Name="year1Quarters" >
+                                        <Grid Grid.Row="1" x:Name="year1Quarters">
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="64*" />
                                                 <RowDefinition Height="65*" />
@@ -57,43 +58,43 @@
                                                 <ColumnDefinition Width="76*" />
                                             </Grid.ColumnDefinitions>
                                             <!-- Year 1 Fall-->
-                                            <Grid Grid.Column="0" Grid.Row="0">
+                                            <Grid Grid.Column="0" Grid.Row="0" x:Name="GridYear1Fall" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="Yellow">
                                                 <StackPanel Margin="10,0,0,0">
                                                     <TextBlock Text="Fall" FontSize="10" />
                                                     <ListBox x:Name="Year1Fall" ItemsSource="{Binding Path=getYear1.getFall.getClasses, Mode=OneWay, BindsDirectlyToSource=True}" DisplayMemberPath="displayString" />
-                                                    <Button x:Name="Year1FallRemove" Click="Year1FallRemove_Click_1"/>
+                                                    <Button x:Name="Year1FallRemove" Click="RemoveFromSchedule_Click" />
                                                 </StackPanel>
                                             </Grid>
                                             <!-- Year 1 Winter-->
-                                            <Grid Grid.Column="1" Grid.Row="0">
+                                            <Grid Grid.Column="1" Grid.Row="0" x:Name="GridYear1Winter" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White" >
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Winter" FontSize="10" />
                                                     <ListBox x:Name="Year1Winter" ItemsSource="{Binding Path=getYear1.getWinter.getClasses}" DisplayMemberPath="displayString"/>
-                                                    <Button x:Name="Year1WinterRemove" />
+                                                    <Button x:Name="Year1WinterRemove" Click="RemoveFromSchedule_Click" />
                                                 </StackPanel>
                                             </Grid>
 
                                             <!-- Year 1 Spring-->
-                                            <Grid Grid.Column="0" Grid.Row="1">
+                                            <Grid Grid.Column="0" Grid.Row="1" x:Name="GridYear1Spring" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                 <StackPanel Margin="10,0,0,0">
                                                     <TextBlock Text="Spring" FontSize="10" />
                                                     <ListBox x:Name="Year1Spring" ItemsSource="{Binding Path=getYear1.getSpring.getClasses}" DisplayMemberPath="displayString"/>
-                                                    <Button x:Name="Year1SpringRemove" />
+                                                    <Button x:Name="Year1SpringRemove" Click="RemoveFromSchedule_Click" />
                                                 </StackPanel>
                                             </Grid>
 
                                             <!-- Year 1 Summer-->
-                                            <Grid Grid.Column="1" Grid.Row="1">
+                                            <Grid Grid.Column="1" Grid.Row="1" x:Name="GridYear1Summer" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                 <StackPanel Margin="0,0,0,10">
                                                     <TextBlock Text="Summer" FontSize="10" />
                                                     <ListBox x:Name="Year1Summer" ItemsSource="{Binding Path=getYear1.getSummer.getClasses}" DisplayMemberPath="displayString"/>
-                                                    <Button x:Name="Year1SummerRemove" />
+                                                    <Button x:Name="Year1SummerRemove" Click="RemoveFromSchedule_Click" />
                                                 </StackPanel>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <!-- YEAR 2 GRID -->
-                                    <Grid Grid.Column="1" Grid.Row="0" x:Name="year2">
+                                    <Grid Grid.Column="1" Grid.Row="0" x:Name="year2" Background="LightPink">
                                         <Border BorderThickness="0,2,2,4" BorderBrush="Black"/>
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -102,7 +103,7 @@
                                             </Grid.RowDefinitions>
                                             <!-- TEXT BAR 2-->
                                             <Border BorderThickness="0,0,0,2" BorderBrush="Black"/>
-                                            <TextBlock Grid.Row="0" Text="Year 2" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Row="0" Text="Year 2" HorizontalAlignment="Center" VerticalAlignment="Center"  />
                                             <Grid Grid.Row="1" x:Name="year2Quarters">
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition Width="77*" />
@@ -113,44 +114,44 @@
                                                     <RowDefinition Height="65*" />
                                                 </Grid.RowDefinitions>
                                                 <!-- Year 2 Fall-->
-                                                <Grid Grid.Column="0" Grid.Row="0">
+                                                <Grid Grid.Column="0" Grid.Row="0" x:Name="GridYear2Fall" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
                                                         <ListBox x:Name="Year2Fall" ItemsSource="{Binding Path=getYear2.getFall.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year2FallRemove" />
+                                                        <Button x:Name="Year2FallRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 2 Winter-->
-                                                <Grid Grid.Column="1" Grid.Row="0">
+                                                <Grid Grid.Column="1" Grid.Row="0" x:Name="GridYear2Winter" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
                                                         <ListBox x:Name="Year2Winter" ItemsSource="{Binding Path=getYear2.getWinter.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year2WinterRemove" />
+                                                        <Button x:Name="Year2WinterRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 2 Spring-->
-                                                <Grid Grid.Column="0" Grid.Row="1">
+                                                <Grid Grid.Column="0" Grid.Row="1" x:Name="GridYear2Spring" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
                                                         <ListBox x:Name="Year2Spring" ItemsSource="{Binding Path=getYear2.getSpring.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year2SpringRemove" />
+                                                        <Button x:Name="Year2SpringRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 2 Summer-->
-                                                <Grid Grid.Column="1" Grid.Row="1">
+                                                <Grid Grid.Column="1" Grid.Row="1" x:Name="GridYear2Summer" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
                                                         <ListBox x:Name="Year2Summer" ItemsSource="{Binding Path=getYear2.getSummer.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year2SummerRemove" />
+                                                        <Button x:Name="Year2SummerRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <!-- YEAR 3 Grid-->
-                                    <Grid Grid.Column="0" Grid.Row="1" x:Name="year3" >
+                                    <Grid Grid.Column="0" Grid.Row="1" x:Name="year3" Background="LightSeaGreen" >
                                         <Border BorderBrush="Black" BorderThickness="2,0,4,2"/>
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -171,44 +172,44 @@
                                                     <RowDefinition Height="65*" />
                                                 </Grid.RowDefinitions>
                                                 <!-- Year 3 Fall-->
-                                                <Grid Grid.Column="0" Grid.Row="0">
+                                                <Grid Grid.Column="0" Grid.Row="0" x:Name="GridYear3Fall" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
                                                         <ListBox x:Name="Year3Fall" ItemsSource="{Binding Path=getYear3.getFall.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year3FallRemove" />
+                                                        <Button x:Name="Year3FallRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 3 Winter-->
-                                                <Grid Grid.Column="1" Grid.Row="0">
+                                                <Grid Grid.Column="1" Grid.Row="0" x:Name="GridYear3Winter" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
                                                         <ListBox x:Name="Year3Winter" ItemsSource="{Binding Path=getYear3.getWinter.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year3WinterRemove" />
+                                                        <Button x:Name="Year3WinterRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 3 Spring-->
-                                                <Grid Grid.Column="0" Grid.Row="1">
+                                                <Grid Grid.Column="0" Grid.Row="1" x:Name="GridYear3Spring" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
                                                         <ListBox x:Name="Year3Spring" ItemsSource="{Binding Path=getYear3.getSpring.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year3SpringRemove" />
+                                                        <Button x:Name="Year3SpringRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 3 Summer-->
-                                                <Grid Grid.Column="1" Grid.Row="1">
+                                                <Grid Grid.Column="1" Grid.Row="1" x:Name="GridYear3Summer" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
                                                         <ListBox x:Name="Year3Summer" ItemsSource="{Binding Path=getYear3.getSummer.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year3SummerRemove" />
+                                                        <Button x:Name="Year3SummerRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
                                         </Grid>
                                     </Grid>
                                     <!-- YEAR 4 GRID-->
-                                    <Grid Grid.Column="1" Grid.Row="1" x:Name="year4">
+                                    <Grid Grid.Column="1" Grid.Row="1" x:Name="year4" Background="LightSalmon">
                                         <Border BorderBrush="Black" BorderThickness="0,0,2,2" />
                                         <Grid>
                                             <Grid.RowDefinitions>
@@ -228,37 +229,37 @@
                                                     <RowDefinition Height="66*" />
                                                 </Grid.RowDefinitions>
                                                 <!-- Year 4 Fall-->
-                                                <Grid Grid.Column="0" Grid.Row="0">
+                                                <Grid Grid.Column="0" Grid.Row="0" x:Name="GridYear4Fall" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Fall" FontSize="10" />
                                                         <ListBox x:Name="Year4Fall" ItemsSource="{Binding Path=getYear4.getFall.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year4FallRemove" />
+                                                        <Button x:Name="Year4FallRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                                 <!-- Year 4 Winter-->
-                                                <Grid Grid.Column="1" Grid.Row="0">
+                                                <Grid Grid.Column="1" Grid.Row="0" x:Name="GridYear4Winter" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Winter" FontSize="10" />
                                                         <ListBox x:Name="Year4Winter" ItemsSource="{Binding Path=getYear4.getWinter.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year4WinterRemove" />
+                                                        <Button x:Name="Year4WinterRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 4 Spring-->
-                                                <Grid Grid.Column="0" Grid.Row="1">
+                                                <Grid Grid.Column="0" Grid.Row="1" x:Name="GridYear4Spring" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="10,0,0,0">
                                                         <TextBlock Text="Spring" FontSize="10" />
                                                         <ListBox x:Name="Year4Spring" ItemsSource="{Binding Path=getYear4.getSpring.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year4SpringRemove" />
+                                                        <Button x:Name="Year4SpringRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
 
                                                 <!-- Year 4 Summer-->
-                                                <Grid Grid.Column="1" Grid.Row="1">
+                                                <Grid Grid.Column="1" Grid.Row="1" x:Name="GridYear4Summer" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="White">
                                                     <StackPanel Margin="0,0,0,10">
                                                         <TextBlock Text="Summer" FontSize="10" />
                                                         <ListBox x:Name="Year4Summer" ItemsSource="{Binding Path=getYear4.getSummer.getClasses}" DisplayMemberPath="displayString"/>
-                                                        <Button x:Name="Year4SummerRemove" />
+                                                        <Button x:Name="Year4SummerRemove" Click="RemoveFromSchedule_Click" />
                                                     </StackPanel>
                                                 </Grid>
                                             </Grid>
@@ -276,13 +277,16 @@
                                     <controls:TabItem Header="Navigation">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="list of classes goes here" />
+                                            <ListBox x:Name="AllClasses" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=listOfAllClasses}" DisplayMemberPath="displayString"/>
+                                            <Button x:Name="AddtoSchedule" Click="AddtoSchedule_Click" />
+                                            <Button x:Name="AddtoClassesTaken" Click="AddtoClassesTaken_Click" />
                                         </StackPanel>
                                     </controls:TabItem>
                                     <controls:TabItem Header="Classes Taken">
                                         <StackPanel Orientation="Vertical">
                                             <TextBlock Text="list of classes taken" />
                                             <ListBox x:Name="TakenClasses" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=listOfClassesTaken}" DisplayMemberPath="displayString"/>
-                                            <Button x:Name="AddtoYear1Fall" Click="AddtoYear1Fall_Click" />
+                                            <Button x:Name="RemovefromTaken" Click="RemovefromTaken_Click" />
                                         </StackPanel>
                                     </controls:TabItem>
 

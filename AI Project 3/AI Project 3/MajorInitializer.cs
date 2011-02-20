@@ -25,6 +25,7 @@ namespace AI_Project_3
         public string importString { get; set; }
 
         public ObservableCollection<Class> listOfClassesTaken { get; set; }
+        public ObservableCollection<Class> listOfAllClasses { get; set; }
 
         private string _SelectedMajor;
 
@@ -76,14 +77,7 @@ namespace AI_Project_3
             // initialize the list of added majors
             listOfAddedMajors = new ObservableCollection<string>();
             listOfClassesTaken = new ObservableCollection<Class>();
-
-            for (int i = 0; i < 15; i++)
-            {
-                string s = "a";
-                for (int j = 0; j < i; j++)
-                    s += "a";
-                listOfClassesTaken.Add(new Class("dat" + s, ClassStatus.Completed));
-            }
+            listOfAllClasses = new ObservableCollection<Class>();
 
             //create the list of years
             scheduleOfClasses = new ObservableCollection<Year>();
@@ -106,16 +100,26 @@ namespace AI_Project_3
             scheduleOfClasses.Add(year2);
             scheduleOfClasses.Add(year3);
             scheduleOfClasses.Add(year4);
-            #region quarter1
-
-            Quarter quarter1 = year1.getQuarter(0);
-            quarter1.addClass(new Class("ICS 21", ClassStatus.Completed));
-            quarter1.addClass(new Class("ICS 22", ClassStatus.Completed));
 
             #endregion
 
+            #region Mock Schedule Data
+            int mockS = 1;
+            foreach (Year y in scheduleOfClasses)
+            {
+                foreach (Quarter q in y.Quarters)
+                {
+                    Class c = new Class("class " + mockS, ClassStatus.CanBeTaken);
+                    q.addClass(c);
+                    listOfAllClasses.Add(c);
+                    mockS++;
+                    c = new Class("class " + mockS, ClassStatus.CanBeTaken);
+                    q.addClass(c);
+                    listOfAllClasses.Add(c);
+                    mockS++;
+                }
+            }
             #endregion
-
         }
 
         protected void OnPropertyChanged(String propertyName)
@@ -127,151 +131,8 @@ namespace AI_Project_3
             }
         }
 
+        #region Get scheduler stuff improved
 
-       #region GetSchedulerStuffs
-       // public ObservableCollection<Class> getYear1Fall
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[0].getQuarter(0).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear2Fall
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[1].getQuarter(0).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear3Fall
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[2].getQuarter(0).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear4Fall
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[3].getQuarter(0).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear1Winter
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[0].getQuarter(1).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear2Winter
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[1].getQuarter(1).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear3Winter
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[2].getQuarter(1).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear4Winter
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[3].getQuarter(1).getClasses;
-       //     }
-       // }
-       // public ObservableCollection<Class> getYear1Spring
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[0].getQuarter(2).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear2Spring
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[1].getQuarter(2).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear3Spring
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[2].getQuarter(2).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear4Spring
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[3].getQuarter(2).getClasses;
-       //     }
-       // }
-       // public ObservableCollection<Class> getYear1Summer
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[0].getQuarter(3).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear2Summer
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[1].getQuarter(3).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear3Summer
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[2].getQuarter(3).getClasses;
-       //     }
-       // }
-
-       // public ObservableCollection<Class> getYear4Summer
-       // {
-       //     get
-       //     {
-       //         return scheduleOfClasses[3].getQuarter(3).getClasses;
-       //     }
-       // }
-       #endregion
-
-        #region classes taken
-        /// <summary>
-        /// Removes the class at specified index from the list of classes taken
-        /// </summary>
-        /// <param name="index">int index</param>
-        public void removeClassesTakenAt(int index)
-        {
-            listOfClassesTaken.RemoveAt(index);
-        }
-        #endregion
-
-#region Get scheduler stuff improved
-
-        /// <summary>
-        /// Gets the first year
-        /// </summary>
         public Year getYear1
         {
             get
@@ -303,6 +164,22 @@ namespace AI_Project_3
                 return scheduleOfClasses[3];
             }
         }
-#endregion
+        #endregion
+
+
+        #region UI year and quarter selected
+
+        public int uiYearSelected
+        {
+            get;
+            set;
+        }
+
+        public int uiQuarterSelected
+        {
+            get;set;
+        }
+
+        #endregion UI year and quarter selected
     }
 }

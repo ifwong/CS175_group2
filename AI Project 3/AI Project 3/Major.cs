@@ -42,7 +42,6 @@ namespace AI_Project_3
         public void addMajor(String s)
         {
             majors.Add(s);
-            //majors[majors.Count] = s;
         }
 
         public ObservableCollection<String> Minors

@@ -15,8 +15,9 @@ using System.Collections.ObjectModel;
 
 namespace AI_Project_3
 {
-    public class Year
+    public class Year : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
         private ObservableCollection<Quarter> quarters;
         private int yearNum;
 
@@ -121,5 +122,15 @@ namespace AI_Project_3
         }
 
         #endregion
+
+        private void OnPropertyChanged(string property)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
+        }
+
     }
+
 }

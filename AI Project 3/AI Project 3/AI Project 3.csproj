@@ -74,6 +74,7 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Class.cs" />
+    <Compile Include="ListBoxCountVisibilityConverter.cs" />
     <Compile Include="Listing.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
