@@ -10,8 +10,9 @@ using System.Windows.Media;
 using System.Windows.Media.Animation;
 using System.Windows.Shapes;
 using System.ComponentModel;
-
-
+using System.IO;
+using System.Diagnostics;
+using System.IO.IsolatedStorage;
 using System.Collections.ObjectModel;
 
 namespace AI_Project_3
@@ -20,7 +21,7 @@ namespace AI_Project_3
     {
         public MajorInitializer majorinit { get; set; }
         public Year years { get; set; }
-
+        string SAVEFILENAME = "no-name";
         private System.Windows.Controls.ListBox _SelectedQuarter;
         private ObservableCollection<Class> _CollectionOfClassesForSelectedQuarter;
 
@@ -29,6 +30,8 @@ namespace AI_Project_3
             InitializeComponent();
             majorinit = new MajorInitializer();
             this.Loaded += new RoutedEventHandler(Page_Loaded);
+            saveName.Text = "no-name";
+            loadName.Text = "no-name";
         }
 
         //This runs when the page is loaded
@@ -416,6 +419,59 @@ namespace AI_Project_3
             majorinit.importString = this.ImportTextBox.Text;
 
             this.ImportTextBox.Text = "";
+        }
+
+        private void save_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                if (saveName.Text != null)
+                {
+                    SAVEFILENAME = saveName.Text;
+                }
+
+                IsolatedStorageFile iso = IsolatedStorageFile.GetUserStoreForApplication();
+                IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(SAVEFILENAME, FileMode.Create, iso);
+
+                StreamWriter writer = new StreamWriter(isoStream);
+                string data = majorinit.toString();
+                writer.Write(data);
+                writer.Close();
+
+            }
+            catch (Exception bException)
+            {
+                saveLabel.Text = bException.Message;
+            }
+
+
+            //Process.Start(@"C:\trial.txt");
+        }
+
+        private void load_Click(object sender, RoutedEventArgs e)
+        {
+            //TODO write parser for load
+            try
+            {
+                if (loadName.Text != null)
+                {
+                    SAVEFILENAME = loadName.Text;
+                }
+                IsolatedStorageFile iso = IsolatedStorageFile.GetUserStoreForApplication();
+                using (IsolatedStorageFileStream isoStream = new IsolatedStorageFileStream(SAVEFILENAME, FileMode.Open, iso))
+                {
+                    using (StreamReader reader = new StreamReader(isoStream))
+                    {
+                        //do something with it
+                        loadLabel.Text = reader.ReadLine();
+                    }
+                }
+            }
+            catch (Exception bException)
+            {
+                loadLabel.Text = bException.Message;
+            }
         }
     }
 }

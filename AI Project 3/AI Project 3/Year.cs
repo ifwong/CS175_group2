@@ -131,6 +131,19 @@ namespace AI_Project_3
             }
         }
 
+        public String toString()
+        {
+            String toReturn = "$" + yearNum + "\n";
+
+            foreach (var quarter in quarters)
+            {
+                toReturn += quarter.toString();
+                toReturn += "\n";
+            }
+
+            return toReturn;
+        }
+
     }
 
 }

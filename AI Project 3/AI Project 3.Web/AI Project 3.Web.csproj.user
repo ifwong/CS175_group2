@@ -22,7 +22,6 @@
           <AlwaysStartWebServerOnDebug>True</AlwaysStartWebServerOnDebug>
           <ProjectOutputReferences>
             <Ref Project="{5B098EF3-D415-4FEB-8A77-B2ABC4D0FB16}" Folder="ClientBin">AI Project 3.xap</Ref>
-            <Ref Project="{CB677AAE-2BE3-479F-B6CD-0E15252BFF42}" Folder="ClientBin">aiproject4.xap</Ref>
           </ProjectOutputReferences>
         </WebProjectProperties>
       </FlavorProperties>

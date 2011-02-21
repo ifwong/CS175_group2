@@ -26,6 +26,7 @@ namespace AI_Project_3
 
         public ObservableCollection<Class> listOfClassesTaken { get; set; }
         public ObservableCollection<Class> listOfAllClasses { get; set; }
+        public ObservableCollection<Class> listOfPrefferedClasses { get; set; }
 
         private string _SelectedMajor;
 
@@ -78,6 +79,7 @@ namespace AI_Project_3
             listOfAddedMajors = new ObservableCollection<string>();
             listOfClassesTaken = new ObservableCollection<Class>();
             listOfAllClasses = new ObservableCollection<Class>();
+            listOfPrefferedClasses = new ObservableCollection<Class>();
 
             //create the list of years
             scheduleOfClasses = new ObservableCollection<Year>();
@@ -181,5 +183,26 @@ namespace AI_Project_3
         }
 
         #endregion UI year and quarter selected
+
+        public String toString()
+        {
+            String toBeReturned = "Hello Nurse";
+
+            foreach (var major in listOfAddedMajors)
+            {
+                toBeReturned += "&\t" + major + "\n";
+            }
+            toBeReturned += "\n";
+            foreach (var year in scheduleOfClasses)
+            {
+                toBeReturned += year.toString();
+            }
+            toBeReturned += "\n*****\n";
+            foreach (var prevClass in listOfClassesTaken)
+            {
+                toBeReturned += prevClass.toString();
+            }
+            return toBeReturned;
+        }
     }
 }

@@ -76,6 +76,11 @@ namespace AI_Project_3
             }
             else return false;
         } */
+
+        public String toString()
+        {
+            return status + ", " + name;
+        }
         
     }
 }

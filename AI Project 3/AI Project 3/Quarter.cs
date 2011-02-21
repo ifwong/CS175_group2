@@ -140,6 +140,16 @@ namespace AI_Project_3
             }
         }
 
-
+        public String toString()
+        {
+            String toReturn = "# " + quarterType + " " + yearNum + "\n";
+            foreach (var course in classes)
+            {
+                toReturn += course.ToString();
+                if (classes.IndexOf(course) != (classes.Count - 1))
+                    toReturn += ";\t";
+            }
+            return toReturn;
+        }
     }
 }

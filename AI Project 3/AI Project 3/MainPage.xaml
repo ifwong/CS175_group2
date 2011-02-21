@@ -9,7 +9,7 @@
 
     <UserControl.Resources>
         <ns:MajorInitializer x:Key="MajorInit" />
-        <ns:ListBoxCountVisibilityConverter x:Key="ListBoxCountVisibilityConverter" />
+        
     </UserControl.Resources>
 
     <Grid>
@@ -289,6 +289,11 @@
                                             <Button x:Name="RemovefromTaken" Click="RemovefromTaken_Click" />
                                         </StackPanel>
                                     </controls:TabItem>
+                                    <controls:TabItem Header="Preferred Classes">
+                                        <StackPanel Orientation="Vertical">
+                                            <ListBox x:Name="PrefferedClasses" ItemsSource="{Binding Source={StaticResource MajorInit}, Path=listOfPrefferedClasses}" DisplayMemberPath="displayString"/>
+                                        </StackPanel>
+                                    </controls:TabItem>
 
                                 </controls:TabControl>
                             </StackPanel>
@@ -300,26 +305,28 @@
                         <StackPanel Name="SettingsMasterStack">
                             <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Save" FontSize="18" />
-                                    <TextBlock Text="Enter a unique name here for your saved file" FontSize="10" />
+                                    <TextBlock Name ="saveLabel" Text="Save" FontSize="18" />
+                                    <TextBlock Text="Enter a unique name here for your saved file." FontSize="10" />
+                                    <TextBlock Text="Please only enter alphanumeric characters, exclude path." FontSize="10" />
                                 </StackPanel>
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0">
-                                    <TextBox Width="300" />
+                                    <TextBox Name ="saveName" Width="300" />
                                 </StackPanel>
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0">
-                                    <Button Content="Save" />
+                                    <Button Name="save" Content="Save" Click="save_Click"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal" Margin="5,5,0,0">
                                 <StackPanel Orientation="Vertical">
-                                    <TextBlock Text="Load" FontSize="18" />
-                                    <TextBlock Text="Enter a unique name here for your local file" FontSize="10" />
+                                    <TextBlock Name="loadLabel" Text="Load" FontSize="18" />
+                                    <TextBlock Text="Enter a unique name here for your local file." FontSize="10" />
+                                    <TextBlock Text="Please only enter alphanumeric characters, exclude path." FontSize="10" />
                                 </StackPanel>
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0">
-                                    <TextBox Width="300" />
+                                    <TextBox Name="loadName" Width="300" />
                                 </StackPanel>
                                 <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,0,0">
-                                    <Button Content="Save" />
+                                    <Button Name="load" Content="Load" Click="load_Click"/>
                                 </StackPanel>
                             </StackPanel>
                             <StackPanel Margin="5,20,0,0" Orientation="Horizontal">

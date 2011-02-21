@@ -13,7 +13,7 @@
     <RootNamespace>AI_Project_3.Web</RootNamespace>
     <AssemblyName>AI Project 3.Web</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <SilverlightApplicationList>{5B098EF3-D415-4FEB-8A77-B2ABC4D0FB16}|..\AI Project 3\AI Project 3.csproj|ClientBin|False,{CB677AAE-2BE3-479F-B6CD-0E15252BFF42}|..\aiproject4\aiproject4.csproj|ClientBin|False</SilverlightApplicationList>
+    <SilverlightApplicationList>{5B098EF3-D415-4FEB-8A77-B2ABC4D0FB16}|..\AI Project 3\AI Project 3.csproj|ClientBin|False</SilverlightApplicationList>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,7 +78,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>54414</DevelopmentServerPort>
+          <DevelopmentServerPort>51751</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
